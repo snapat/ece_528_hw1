@@ -43,16 +43,20 @@ int localvar; //this is a local variable
 10. The break statement stops the code in a loop from executing at that point and ends the loop. A continue statement skips the current loop from that point and begins the next loop, if the condition is still true.
 
 11. Bitwise operators act on each individual bit of an integer. & (AND) returns 1 only if both bits are 1, and is used to clear or check bits. | (OR) returns 1 if either bit is 1, and is used to set bits. ^ (XOR) returns 1 if the bits are different, and is used to toggle bits. ~ (NOT) flips every bit, and is used to build a mask for clearing. << and >> shift bits left or right by n places, and 1 << n builds a mask for bit n.
+    ```c
    x |= 0x08;       //set bit 3
    x &= ~0x08;      //clear bit 3
    x ^= 0x08;       //toggle bit 3
    if (x & 0x08)    //check bit 3
 
 12. PxSEL0 and PxSEL1 select what function each pin performs. Each pin has one bit in each register, and together those two bits choose whether the pin acts as a GPIO or is connected to one of the chip's peripherals. Setting both bits to 0 selects the GPIO function.
+```c
    P1->SEL0 &= ~0x81;
    P1->SEL1 &= ~0x81;
+```
 
 13.
+   ```c
    void P1_1_and_P1_4_Init(void) {
        P1->SEL0 &= ~0x12;   //GPIO function
        P1->SEL1 &= ~0x12;
@@ -61,7 +65,7 @@ int localvar; //this is a local variable
        P1->OUT  |=  0x12;   //1 = pull-up
    }
 
-14.
+```c
    void Buttons_Init(void) {
        //P3.1 and P3.6
        P3->SEL0 &= ~0x42;
@@ -77,11 +81,13 @@ int localvar; //this is a local variable
        P5->REN  |=  0x11;   //enable resistor
        P5->OUT  &= ~0x11;   //0 = pull-down
    }
-
-15.
+```
+14.
+```c
    void LEDs_Init(void) {
        P7->SEL0 &= ~0xFF;   //GPIO function
        P7->SEL1 &= ~0xFF;
        P7->OUT  &= ~0xFF;   //set low before enabling outputs
        P7->DIR  |=  0xFF;   //output
    }
+```
