@@ -48,6 +48,7 @@ int localvar; //this is a local variable
    x &= ~0x08;      //clear bit 3
    x ^= 0x08;       //toggle bit 3
    if (x & 0x08)    //check bit 3
+```
 
 12. PxSEL0 and PxSEL1 select what function each pin performs. Each pin has one bit in each register, and together those two bits choose whether the pin acts as a GPIO or is connected to one of the chip's peripherals. Setting both bits to 0 selects the GPIO function.
 ```c
