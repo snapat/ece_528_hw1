@@ -43,7 +43,7 @@ int localvar; //this is a local variable
 10. The break statement stops the code in a loop from executing at that point and ends the loop. A continue statement skips the current loop from that point and begins the next loop, if the condition is still true.
 
 11. Bitwise operators act on each individual bit of an integer. & (AND) returns 1 only if both bits are 1, and is used to clear or check bits. | (OR) returns 1 if either bit is 1, and is used to set bits. ^ (XOR) returns 1 if the bits are different, and is used to toggle bits. ~ (NOT) flips every bit, and is used to build a mask for clearing. << and >> shift bits left or right by n places, and 1 << n builds a mask for bit n.
-    ```c
+```c
    x |= 0x08;       //set bit 3
    x &= ~0x08;      //clear bit 3
    x ^= 0x08;       //toggle bit 3
