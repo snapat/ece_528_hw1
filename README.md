@@ -75,7 +75,7 @@ int localvar; //this is a local variable
        P3->REN  |=  0x42;   //enable resistor
        P3->OUT  &= ~0x42;   //0 = pull-down
 
-       //P5.0 and P5.4
+       //P5.0 and P5.5
        P5->SEL0 &= ~0x11;
        P5->SEL1 &= ~0x11;
        P5->DIR  &= ~0x11;   //input
